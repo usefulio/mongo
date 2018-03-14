@@ -9,7 +9,7 @@
     "start": "npg start"
   },
   "devDependencies": {
-    "npg": "file:/Users/lukejagodzinski/workspace/node/npg"
+    "npg": "^0.2.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
