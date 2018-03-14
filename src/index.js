@@ -1,6 +1,9 @@
 import crypto from "crypto";
 import { MongoClient } from "mongodb";
 
+let client;
+let db;
+
 /**
  * Connects to database using info defined in environment variables (MONGO_URL,
  * MONGO_DATABASE, MONGO_SSL, MONGO_SSL_VALIDATE).

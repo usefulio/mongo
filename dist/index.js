@@ -13,6 +13,8 @@ var _crypto = _interopRequireDefault(require("crypto"));
 
 var _mongodb = require("mongodb");
 
+let client;
+let db;
 /**
  * Connects to database using info defined in environment variables (MONGO_URL,
  * MONGO_DATABASE, MONGO_SSL, MONGO_SSL_VALIDATE).
@@ -20,6 +22,7 @@ var _mongodb = require("mongodb");
  * @async
  * @function connect
  */
+
 const connect =
 /*#__PURE__*/
 function () {
