@@ -1,6 +1,7 @@
 {
   "name": "oculushealth-mongo",
   "version": "0.1.1",
+  "private": true,
   "description": "Package created with NPG (Node Package Generator)",
   "main": "dist/index.js",
   "scripts": {
