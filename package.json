@@ -1,5 +1,5 @@
 {
-  "name": "@useful/oculushealth-mongo",
+  "name": "@useful/mongo",
   "version": "0.1.1",
   "description": "Package created with NPG (Node Package Generator)",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "npg": "^0.2.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.40",
-    "mongodb": "^3.0.4"
+    "@babel/runtime": "^7.0.0-beta.44",
+    "mongodb": "^3.0.5"
   }
 }
