@@ -13,6 +13,12 @@ let db;
  */
 const connect = async () => {
   if (!client) {
+    const ssl = process.env.MONGO_SSL === "true" || false;
+    const sslValidate = process.env.MONGO_SSL_VALIDATE === "true" || false;
+    console.log("------------------------------------------------------------");
+    console.log(ssl, typeof ssl);
+    console.log(sslValidate, typeof sslValidate);
+    console.log("------------------------------------------------------------");
     // Connect to MongoDB server.
     client = await MongoClient.connect(process.env.MONGO_URL, {
       ssl: process.env.MONGO_SSL === "true" || false,
