@@ -15,8 +15,8 @@ const connect = async () => {
   if (!client) {
     // Connect to MongoDB server.
     client = await MongoClient.connect(process.env.MONGO_URL, {
-      ssl: process.env.MONGO_SSL || false,
-      sslValidate: process.env.MONGO_SSL_VALIDATE || false
+      ssl: process.env.MONGO_SSL === "true" || false,
+      sslValidate: process.env.MONGO_SSL_VALIDATE === "true" || false
     });
     // Get database.
     db = client.db(process.env.MONGO_DATABASE);
