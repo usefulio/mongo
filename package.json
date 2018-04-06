@@ -1,6 +1,6 @@
 {
   "name": "@useful/mongo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Package created with NPG (Node Package Generator)",
   "main": "dist/index.js",
   "scripts": {
