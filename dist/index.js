@@ -7,8 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.generateId = exports.getCollection = exports.getDatabase = exports.disconnect = exports.connect = void 0;
 
-var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
-
 var _crypto = _interopRequireDefault(require("crypto"));
 
 var _mongodb = require("mongodb");
@@ -23,25 +21,17 @@ let db;
  * @function connect
  */
 
-const connect =
-/*#__PURE__*/
-function () {
-  var _ref = (0, _asyncToGenerator2.default)(function* () {
-    if (!client) {
-      // Connect to MongoDB server.
-      client = yield _mongodb.MongoClient.connect(process.env.MONGO_URL, {
-        ssl: process.env.MONGO_SSL || false,
-        sslValidate: process.env.MONGO_SSL_VALIDATE || false
-      }); // Get database.
+const connect = async () => {
+  if (!client) {
+    // Connect to MongoDB server.
+    client = await _mongodb.MongoClient.connect(process.env.MONGO_URL, {
+      ssl: process.env.MONGO_SSL === "true" || false,
+      sslValidate: process.env.MONGO_SSL_VALIDATE === "true" || false
+    }); // Get database.
 
-      db = client.db(process.env.MONGO_DATABASE);
-    }
-  });
-
-  return function connect() {
-    return _ref.apply(this, arguments);
-  };
-}();
+    db = client.db(process.env.MONGO_DATABASE);
+  }
+};
 /**
  * Disconnects from database.
  *
@@ -52,21 +42,13 @@ function () {
 
 exports.connect = connect;
 
-const disconnect =
-/*#__PURE__*/
-function () {
-  var _ref2 = (0, _asyncToGenerator2.default)(function* () {
-    if (client) {
-      yield client.close();
-      client = null;
-      db = null;
-    }
-  });
-
-  return function disconnect() {
-    return _ref2.apply(this, arguments);
-  };
-}();
+const disconnect = async () => {
+  if (client) {
+    await client.close();
+    client = null;
+    db = null;
+  }
+};
 /**
  * Disconnects from database.
  *
