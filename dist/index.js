@@ -50,7 +50,7 @@ const disconnect = async () => {
   }
 };
 /**
- * Disconnects from database.
+ * Gets database.
  *
  * @function getDatabase
  * @return {Db} MongoDB instance of the Db class.
@@ -59,9 +59,9 @@ const disconnect = async () => {
 
 exports.disconnect = disconnect;
 
-const getDatabase = () => {
+const getDatabase = async () => {
   if (!client) {
-    throw new Error("Not connected to database");
+    await connect();
   }
 
   return db;
@@ -76,9 +76,9 @@ const getDatabase = () => {
 
 exports.getDatabase = getDatabase;
 
-const getCollection = collectionName => {
+const getCollection = async collectionName => {
   if (!client) {
-    throw new Error("Not connected to database");
+    await connect();
   } // Get collection.
 
 

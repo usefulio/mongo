@@ -1,17 +1,10 @@
 {
   "name": "@useful/mongo",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Package created with NPG (Node Package Generator)",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "npg build -v 8.10",
-    "start": "npg start"
-  },
-  "devDependencies": {
-    "npg": "^0.2.0"
-  },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.44",
-    "mongodb": "^3.0.5"
+    "@babel/runtime": "^7.0.0-beta.46",
+    "mongodb": "^3.0.8"
   }
 }
