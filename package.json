@@ -1,10 +1,17 @@
 {
   "name": "@useful/mongo",
-  "version": "0.2.0",
-  "description": "Package created with NPG (Node Package Generator)",
+  "version": "0.3.0",
   "main": "dist/index.js",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "npx typescript"
+  },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.46",
-    "mongodb": "^3.0.8"
+    "mongodb": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^3.1.4",
+    "@types/node": "^10.9.4",
+    "typescript": "^3.0.3"
   }
 }
